@@ -1,0 +1,50 @@
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
+
+const Sidebar = () => {
+  const location = useLocation();
+  const [isOpen, setIsOpen] = useState(true); // (optional later for collapsing sidebar)
+
+  const menuItems = [
+    { name: "Dashboard", path: "/" },
+    { name: "Vulnerability Scan", path: "/vulnerability-scan" },
+    { name: "Network Map", path: "/network-map" },
+    { name: "User Enumeration", path: "/user-enumeration" },
+    { name: "Settings", path: "/settings" },
+  ];
+
+  return (
+    <motion.div
+      initial={{ x: -250 }}
+      animate={{ x: 0 }}
+      transition={{ duration: 0.5 }}
+      className="bg-[#161b22] text-white w-64 min-h-screen p-4 shadow-lg"
+    >
+      <div className="text-2xl font-bold mb-10 tracking-wide text-center">
+        GarpSec
+      </div>
+
+      <nav className="flex flex-col gap-4">
+        {menuItems.map((item) => (
+          <Link
+            key={item.name}
+            to={item.path}
+            className={`p-3 rounded-md transition duration-300 ${
+              location.pathname === item.path
+                ? "bg-[#1f2937] text-blue-400 font-semibold"
+                : "hover:bg-[#1f2937] hover:text-blue-300"
+            }`}
+          >
+            {item.name}
+          </Link>
+        ))}
+      </nav>
+
+      {/* Later: we can add collapse button */}
+    </motion.div>
+  );
+};
+
+export default Sidebar;
+

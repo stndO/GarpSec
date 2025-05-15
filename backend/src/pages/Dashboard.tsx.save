@@ -1,0 +1,65 @@
+import React from "react";
+//import {
+//  Card,
+//  CardContent,
+//} from "@/components/ui/card";
+import { Bar, Line, Pie } from "recharts";
+
+const Dashboard = () => {
+  return (
+    <div className="min-h-screen bg-[#0d1117] text-white p-6">
+      <h1 className="text-4xl font-bold mb-2">GarpSec Dashboard</h1>
+      <p className="text-lg mb-8 text-gray-400">
+        Red Team Intelligence - Threat Monitoring Overview
+      </p>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+        <Card className="bg-[#161b22]">
+          <CardContent className="p-4">
+            <h2 className="text-xl font-semibold mb-2">Network Scan</h2>
+            {/* Placeholder for chart */}
+            <div className="h-40 bg-gray-800 rounded-md"></div>
+          </CardContent>
+        </Card>
+
+        <Card className="bg-[#161b22]">
+          <CardContent className="p-4">
+            <h2 className="text-xl font-semibold mb-2">Threat Analytics</h2>
+            <div className="h-40 bg-gray-800 rounded-md"></div>
+          </CardContent>
+        </Card>
+
+        <Card className="bg-[#161b22]">
+          <CardContent className="p-4">
+            <h2 className="text-xl font-semibold mb-2">System Activity</h2>
+            <div className="h-40 bg-gray-800 rounded-md"></div>
+          </CardContent>
+        </Card>
+
+        <Card className="col-span-1 md:col-span-2 bg-[#161b22]">
+          <CardContent className="p-4">
+            <h2 className="text-xl font-semibold mb-2">Threat Timeline</h2>
+            <div className="h-64 bg-gray-800 rounded-md"></div>
+          </CardContent>
+        </Card>
+
+        <Card className="bg-[#161b22]">
+          <CardContent className="p-4">
+            <h2 className="text-xl font-semibold mb-2">AI Watcher</h2>
+            <div className="h-40 bg-gray-800 rounded-md"></div>
+          </CardContent>
+        </Card>
+
+        <Card className="bg-[#161b22]">
+          <CardContent className="p-4">
+            <h2 className="text-xl font-semibold mb-2">Top Ports Scanned</h2>
+            <div className="h-40 bg-gray-800 rounded-md"></div>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  );
+};
+
+export default Dashboard;
+
